@@ -15,13 +15,17 @@ int SumPositiveNumber(int[] array){
     }
     return count;
 }
+int[] Fillarray(int size){
+    int[] array = new int[size];
+    for (int i = 0; i < size; i++)
+    {
+        array[i]= Convert.ToInt32(Console.ReadLine());
+    }
+    return array;
+}
 Console.Write("Введите количество элементов в массиве:  ");
 int n = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine($"Введите c клавиатуры {n} чисел  ");
-int[] somearray = new int[n];
-for (int i = 0; i < somearray.Length; i++)
-{
-    somearray[i] = Convert.ToInt32(Console.ReadLine());
-}
+int[] somearray = Fillarray(n);
 PrintArray(somearray);  
 Console.Write($" -> {SumPositiveNumber(somearray)}");
